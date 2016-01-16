@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rapp_pc_agent_ros_communications</name>
+  <version>0.0.1</version>
+  <description>The RAPP PC Core Agent package</description>
+
+  <maintainer email="klpanagi@gmail.com">Konstantinos Panayiotou</maintainer>
+  <license>APACHE 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+
+</package>
