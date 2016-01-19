@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rapp_pc_agent_ros_communications)
+project(rapp_core_agent_ros_communications)
 set(ROS_BUILD_TYPE Release)
 
 
@@ -7,6 +7,11 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   message_runtime
   std_msgs
+)
+
+add_service_files(
+  FILES
+  AudioPlayerServerRosSrv.srv
 )
 
 generate_messages(

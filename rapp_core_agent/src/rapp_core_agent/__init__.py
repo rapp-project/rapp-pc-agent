@@ -16,9 +16,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Authors: Konstantinos Panayiotou, Manos Tsardoulias
-# contact: klpanagi@gmail.com, etsardou@iti.gr
+# Authors: Konstantinos Panayiotou
+# contact: klpanagi@gmail.com
 
 
-## @file audioIO/player/__init__.py
+## @file rapp_core_agent/__init__.py
 #
+#  @package rapp_core_agent
+#
+from AudioPlayerServer import AudioPlayerServer

@@ -1,0 +1,2 @@
+play_audio_srv_name: /rapp_say
+readframe_chunksize: 1024

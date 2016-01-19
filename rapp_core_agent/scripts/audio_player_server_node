@@ -16,9 +16,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Authors: Konstantinos Panayiotou, Manos Tsardoulias
-# contact: klpanagi@gmail.com, etsardou@iti.gr
+# Authors: Konstantinos Panayiotou
+# contact: klpanagi@gmail.com
+
+__author__ = "Konstantinos Panayiotou"
+__maintainer__ = "Konstantinos Panayiotou"
+__email__ = "klpanagi@gmail.com"
 
 
-## @file audioIO/recorder/__init__.p
-#
+import rospy as rospy
+from rapp_core_agent import AudioPlayerServer
+
+def main():
+    rospy.init_node('audio_player_server_node', anonymous=False)
+    audioPlayer = AudioPlayerServer()
+    rospy.spin()
+
+
+if __name__ == "__main__":
+    main()

@@ -19,7 +19,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
 
 # fetch values from package.xml
 setup_args = generate_distutils_setup(
-    packages = ['rapp_pc_core_agent'],
+    packages = ['rapp_core_agent'],
     package_dir = {'': 'src'}
 )
 

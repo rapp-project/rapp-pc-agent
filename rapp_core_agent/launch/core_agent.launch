@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="rapp_core_agent"/>
+
+  <arg name="audio_player_server" default="true"/>
+
+  <include if="$(arg audio_player_server)"
+    file="$(find rapp_core_agent)/launch/audio_player_server.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
+</launch>

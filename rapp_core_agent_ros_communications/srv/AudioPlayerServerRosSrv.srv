@@ -1,0 +1,6 @@
+# Contains info about time and reference
+Header header
+# The audio filename (system path)
+string audioFile
+---
+string error

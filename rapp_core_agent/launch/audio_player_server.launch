@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="rapp_core_agent"/>
+
+  <!-- Audio Player Node -->
+  <node
+    type="audio_player_server_node"
+    name="audio_player_server"
+    pkg="rapp_core_agent"
+    ns="$(arg namespace)"
+    respawn="true"
+    respawn_delay="10"
+    output="screen">
+
+    <rosparam
+      file="$(find rapp_core_agent)/cfg/audio_player_params.yaml"
+      command="load"
+    />
+
+  </node>
+
+</launch>

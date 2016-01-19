@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rapp_pc_core_agent)
+project(rapp_core_agent)
 set(ROS_BUILD_TYPE Release)
 
 
 find_package(catkin REQUIRED COMPONENTS
-  rapp_pc_agent_ros_communications
+  rapp_core_agent_ros_communications
 )
 
 
 catkin_package(
   CATKIN_DEPENDS
-  rapp_pc_agent_ros_communications
+  rapp_core_agent_ros_communications
 )
 
 
