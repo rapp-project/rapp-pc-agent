@@ -4,19 +4,17 @@ set(ROS_BUILD_TYPE Release)
 
 
 find_package(catkin REQUIRED COMPONENTS
-  rapp_core_agent_ros_communications
+  roscpp
+  rapp_core_agent_msgs
 )
-
 
 catkin_package(
   CATKIN_DEPENDS
-  rapp_core_agent_ros_communications
+  rospy
+  roscpp
+  rapp_core_agent_msgs
 )
 
-
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
 
 #catkin_install_python(
   #PROGRAMS scripts/
@@ -25,3 +23,20 @@ include_directories(
 
 # install python modules under this package
 catkin_python_setup()
+
+
+# Core Agent Implementaiton
+
+include_directories(include
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(core_agent src/core_agent.cpp)
+
+target_link_libraries(core_agent ${catkin_LIBRARIES})
+
+add_dependencies(
+  core_agent
+  ${catkin_EXPORTED_TARGETS}
+  ${rapp_core_agent_msgs_EXPORTED_TARGETS}
+)

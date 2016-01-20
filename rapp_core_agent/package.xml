@@ -12,7 +12,8 @@
 
   <exec_depend>rospy</exec_depend>
 
+  <depend>roscpp</depend>
   <depend>std_msgs</depend>
-  <depend>rapp_core_agent_ros_communications</depend>
+  <depend>rapp_core_agent_msgs</depend>
 
 </package>

@@ -29,9 +29,9 @@ import wave
 import rospy
 from os import path
 
-from rapp_core_agent_ros_communications.srv import (
-        AudioRecordServerRosSrv,
-        AudioRecordServerRosSrvResponse
+from rapp_core_agent_msgs.srv import (
+        Record,
+        RecordResponse
         )
 
 
@@ -50,9 +50,8 @@ class AudioRecordServer:
                 pyaudio.paInt16)
         self.channels = rospy.get_param('~channels', 1)
         self.srvName = rospy.get_param('~record_audio_srv_url',            \
-                '/rapp_core_agent/record')
-        self.srv = rospy.Service(self.srvName, AudioRecordServerRosSrv,     \
-                self.handle_record_audio)
+                '/rapp_core_agent/audio_record_server/record')
+        self.srv = rospy.Service(self.srvName, Record, self.handle_record_audio)
         try:
             self.pa = pyaudio.PyAudio()
         except Exception as e:
@@ -101,7 +100,7 @@ class AudioRecordServer:
 
 
     def handle_record_audio(self, req):
-        response = AudioRecordServerRosSrvResponse()
+        response = RecordResponse()
         recT = req.recordTime
         dataFrames = self.record_to_stream(recT)
         filename =req.filename

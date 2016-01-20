@@ -1,2 +1,2 @@
-play_audio_srv_name: /rapp_say
+play_audio_srv_url: '/rapp_core_agent/audio_play_server/play_audio'
 readframe_chunksize: 1024

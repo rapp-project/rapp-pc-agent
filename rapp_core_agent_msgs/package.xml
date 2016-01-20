@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rapp_core_agent_ros_communications</name>
+  <name>rapp_core_agent_msgs</name>
   <version>0.0.1</version>
   <description>The RAPP PC Core Agent package</description>
 

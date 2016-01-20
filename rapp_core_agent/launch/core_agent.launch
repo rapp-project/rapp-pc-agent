@@ -15,5 +15,15 @@
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
 
+  <node
+    type="core_agent"
+    name="rapp_core_agent"
+    pkg="rapp_core_agent"
+    respawn="true"
+    respawn_delay="10"
+    output="screen">
+
+  </node>
+
 
 </launch>
