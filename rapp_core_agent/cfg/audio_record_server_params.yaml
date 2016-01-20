@@ -1,0 +1,8 @@
+default_dest_dir: '/tmp'
+default_dest_filename: 'record.wav'
+audio_format: 'wav'
+readframe_chunksize: 1024
+samplerate: 16000
+channels: 1
+record_audio_srv_url: '/rapp_record'
+

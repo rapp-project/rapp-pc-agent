@@ -24,4 +24,5 @@
 #
 #  @package rapp_core_agent
 #
-from AudioPlayerServer import AudioPlayerServer
+from AudioPlayServer import AudioPlayServer
+from AudioRecordServer import AudioRecordServer

@@ -25,11 +25,11 @@ __email__ = "klpanagi@gmail.com"
 
 
 import rospy as rospy
-from rapp_core_agent import AudioPlayerServer
+from rapp_core_agent import AudioRecordServer
 
 def main():
-    rospy.init_node('audio_player_server_node', anonymous=False)
-    audioPlayer = AudioPlayerServer()
+    rospy.init_node('audio_record_server_node', anonymous=False)
+    audioRecordServer = AudioRecordServer()
     rospy.spin()
 
 

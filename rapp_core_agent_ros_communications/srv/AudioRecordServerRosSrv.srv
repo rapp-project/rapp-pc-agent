@@ -1,0 +1,8 @@
+# Contains info about time and reference
+Header header
+# Record for time
+uint32 recordTime
+string filename
+---
+string error
+string recFileDest

@@ -16,5 +16,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Authors: Konstantinos Panayiotou, Manos Tsardoulias
-# contact: klpanagi@gmail.com, etsardou@iti.gr
+# Authors: Konstantinos Panayiotou
+# contact: klpanagi@gmail.com
+
+__author__ = "Konstantinos Panayiotou"
+__maintainer__ = "Konstantinos Panayiotou"
+__email__ = "klpanagi@gmail.com"
+
+
+import rospy as rospy
+from rapp_core_agent import AudioPlayServer
+
+def main():
+    rospy.init_node('audio_play_server_node', anonymous=False)
+    audioPlayServer = AudioPlayServer()
+    rospy.spin()
+
+
+if __name__ == "__main__":
+    main()

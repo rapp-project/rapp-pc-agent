@@ -11,7 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_service_files(
   FILES
-  AudioPlayerServerRosSrv.srv
+  AudioPlayServerRosSrv.srv
+  AudioRecordServerRosSrv.srv
 )
 
 generate_messages(

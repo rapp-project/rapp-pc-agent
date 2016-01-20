@@ -19,25 +19,34 @@
 # Authors: Konstantinos Panayiotou
 # contact: klpanagi@gmail.com
 
+
+__author__ = "Konstantinos Panayiotou"
+__maintainer__ = "Konstantinos Panayiotou"
+__email__ = "klpanagi@gmail.com"
+
+
 import pyaudio
 import wave
 from os import path
 import rospy
 
 from rapp_core_agent_ros_communications.srv import (
-        AudioPlayerServerRosSrv,
-        AudioPlayerServerRosSrvResponse
+        AudioPlayServerRosSrv,
+        AudioPlayServerRosSrvResponse
         )
 
 
-class AudioPlayerServer:
+class AudioPlayServer:
     def __init__(self):
         self.chunksize = rospy.get_param('~readframe_chunksize', 1024)
         self.srvName = rospy.get_param('~play_audio_srv_name',              \
-                '/rapp_core_agent/say')
-        self.srv = rospy.Service(self.srvName, AudioPlayerServerRosSrv,     \
+                '/audio_player_server/play_audio')
+        self.srv = rospy.Service(self.srvName, AudioPlayServerRosSrv, \
                 self.handle_play_audio)
-        self.pa = pyaudio.PyAudio()
+        try:
+            self.pa = pyaudio.PyAudio()
+        except Exception as e:
+            rospy.logerr('[Audio Player Server]: %s' %e)
 
 
     def __del__(self):
@@ -70,7 +79,7 @@ class AudioPlayerServer:
 
 
     def handle_play_audio(self, req):
-        response = AudioPlayerServerRosSrvResponse()
+        response = AudioPlayServerRosSrvResponse()
         audioFile = path.expanduser(req.audioFile)
         filename = path.basename(audioFile)
         extension = path.splitext(filename)[1].replace(".", "")
@@ -85,5 +94,4 @@ class AudioPlayerServer:
         if(err not in ['', None]):
             response.error = "Failed to read audio file"
         return response
-
 

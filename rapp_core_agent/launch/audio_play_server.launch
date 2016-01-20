@@ -4,8 +4,8 @@
 
   <!-- Audio Player Node -->
   <node
-    type="audio_player_server_node"
-    name="audio_player_server"
+    type="audio_play_server_node"
+    name="audio_play_server"
     pkg="rapp_core_agent"
     ns="$(arg namespace)"
     respawn="true"
@@ -13,7 +13,7 @@
     output="screen">
 
     <rosparam
-      file="$(find rapp_core_agent)/cfg/audio_player_params.yaml"
+      file="$(find rapp_core_agent)/cfg/audio_play_server_params.yaml"
       command="load"
     />
 

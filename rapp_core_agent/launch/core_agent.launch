@@ -2,11 +2,18 @@
 <launch>
   <arg name="namespace" default="rapp_core_agent"/>
 
-  <arg name="audio_player_server" default="true"/>
+  <arg name="audio_play_server" default="true"/>
+  <arg name="audio_record_server" default="true"/>
 
-  <include if="$(arg audio_player_server)"
-    file="$(find rapp_core_agent)/launch/audio_player_server.launch">
+  <include if="$(arg audio_play_server)"
+    file="$(find rapp_core_agent)/launch/audio_play_server.launch">
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
+
+  <include if="$(arg audio_record_server)"
+    file="$(find rapp_core_agent)/launch/audio_record_server.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
 
 </launch>
